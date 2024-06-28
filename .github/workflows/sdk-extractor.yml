@@ -13,8 +13,8 @@ jobs:
 
       - name: Download and unpack SDK
         run: |
-          wget https://github.com/arichornlover/iPhoneOS-SDK/releases/download/v1.0/iPhoneOS16.5.sdk.zip
-          unzip iPhoneOS16.5.sdk.zip -d extracted_folder
+          wget https://github.com/arichornloverALT/iPhoneOS-SDK/releases/download/v1.0/iPhoneOS18.0.sdk.zip
+          unzip iPhoneOS18.0.sdk.zip -d extracted_folder
           mv extracted_folder/* .
 
       - name: Commit changes
