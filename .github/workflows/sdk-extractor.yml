@@ -1,0 +1,26 @@
+name: Upload SDK
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Download and unpack SDK
+        run: |
+          wget https://github.com/arichornlover/iPhoneOS-SDK/releases/download/v1.0/iPhoneOS16.5.sdk.zip
+          unzip iPhoneOS16.5.sdk.zip -d extracted_folder
+          mv extracted_folder/* .
+
+      - name: Commit changes
+        run: |
+          git config --global user.email "actions@github.com"
+          git config --global user.name "GitHub Actions"
+          git add .
+          git commit -m "Add SDK files"
+          git push
